@@ -1,0 +1,79 @@
+" Setup
+set nocompatible
+set nobackup
+colorscheme habamax
+map <Space> <Leader>
+
+" Plugins
+call plug#begin('~/.vim/plugged')
+    " LSP
+    Plug 'prabirshrestha/vim-lsp'
+    Plug 'mattn/vim-lsp-settings'
+
+    " Autocomplete
+    Plug 'prabirshrestha/asyncomplete.vim'
+    Plug 'prabirshrestha/asyncomplete-lsp.vim'
+
+    " Auto pairs
+    Plug 'jiangmiao/auto-pairs'
+
+    " Lightline
+    Plug 'itchyny/lightline.vim'
+
+    " Vim fugitive
+    Plug 'tpope/vim-fugitive'
+
+    " Latex
+    Plug 'lervag/vimtex', {'for': 'tex'}
+call plug#end()
+
+" Filetype
+filetype on
+filetype plugin on
+filetype indent on
+runtime! ftplugin/man.vim
+
+" Tab settings
+set shiftwidth=4
+set tabstop=4
+set expandtab
+set si
+set ai
+
+" Editor
+syntax on
+set number relativenumber
+set cursorline
+set nowrap
+set mouse=ni
+set laststatus=2
+set noshowmode
+set cc=80
+
+" split settings
+set splitbelow
+set splitright
+
+" Search options
+set incsearch
+set smartcase
+set showmatch
+set hlsearch
+
+" Command line options
+set showcmd
+set wildmenu
+set wildmode=full
+
+" Vimtex settings
+let g:vimtex_view_method = 'zathura'
+
+" Async autocomplete settings
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr> pumvisible() ? asyncomplete#close_popup() . "\<cr>" : "\<cr>"
+
+" Normal mode remaps
+nnoremap <Leader>f :Ex<CR>
+nnoremap <Leader>m :Man<SPACE>
+nnoremap <Leader>t :tab terminal<CR>

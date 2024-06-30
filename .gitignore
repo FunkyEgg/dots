@@ -1,0 +1,23 @@
+# Setup
+/*
+!/.config/
+/.config/*
+
+# Git stuff
+!/.gitignore
+
+# Configs
+!/.bashrc
+!/.config/gtk-3.0/settings.ini
+!/.config/rofi/config.rasi
+!/.config/xmobar/
+!/.config/xmonad/xmonad.hs
+
+# Vim
+!/.vim/
+/.vim/.netrwhist
+/.vim/plugged
+
+# Others
+!/backgrounds/
+

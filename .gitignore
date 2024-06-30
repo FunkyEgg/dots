@@ -8,12 +8,17 @@
 
 # Configs
 !/.bashrc
-!/.config/gtk-3.0/settings.ini
-!/.config/rofi/config.rasi
+
+!/.config/gtk-3.0/
+/.config/gtk-3.0/bookmarks
+
+!/.config/rofi/
 !/.config/xmobar/
+
+!/.config/xmonad/
+/.config/xmonad/*
 !/.config/xmonad/xmonad.hs
 
-# Vim
 !/.vim/
 /.vim/.netrwhist
 /.vim/plugged

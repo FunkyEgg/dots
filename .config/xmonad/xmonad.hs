@@ -33,7 +33,7 @@ myManageHook = composeAll [ className =? "Gimp" --> doFloat
 
 myKeys :: [(String, X ())]
 myKeys = [ ("M-<Return>", spawn "rofi -show drun")
-         , ("M-l", spawn "i3lock")
+         , ("M-S-l", spawn "i3lock")
          ]
 
 defaults = def { terminal    = myTerm

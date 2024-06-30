@@ -8,7 +8,7 @@ avg=0
 
 for core in $(seq 1 $cores)
 do
-    temp=$(sensors | grep -m 1 'temp'$core':'| awk '{print $2}' | sed 's/+//' | sed 's/.0°C//')
+    temp=$(sensors | grep -m 1 'temp'$core':'| awk '{print $2}' | sed 's/+//' | sed 's/\..*//')
     avg=$(($avg + $temp))
 done
 avg=$(($avg / $cores))

@@ -19,12 +19,6 @@ call plug#begin('~/.vim/plugged')
 
     " Lightline
     Plug 'itchyny/lightline.vim'
-
-    " Vim fugitive
-    Plug 'tpope/vim-fugitive'
-
-    " Latex
-    Plug 'lervag/vimtex', {'for': 'tex'}
 call plug#end()
 
 " Filetype
@@ -50,7 +44,7 @@ set laststatus=2
 set noshowmode
 set cc=80
 
-" split settings
+"split settings
 set splitbelow
 set splitright
 
@@ -60,13 +54,17 @@ set smartcase
 set showmatch
 set hlsearch
 
+" Highlight trailing whitespace
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+
+" Program options
+set grepprg=rg\ --vimgrep
+
 " Command line options
 set showcmd
 set wildmenu
 set wildmode=full
-
-" Vimtex settings
-let g:vimtex_view_method = 'zathura'
 
 " Async autocomplete settings
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
@@ -75,5 +73,5 @@ inoremap <expr> <cr> pumvisible() ? asyncomplete#close_popup() . "\<cr>" : "\<cr
 
 " Normal mode remaps
 nnoremap <Leader>f :Ex<CR>
-nnoremap <Leader>m :Man<SPACE>
 nnoremap <Leader>t :tab terminal<CR>
+nnoremap <Leader>c :terminal<CR><C-w>N:resize 15<CR>i

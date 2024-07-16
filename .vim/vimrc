@@ -19,6 +19,9 @@ call plug#begin('~/.vim/plugged')
 
     " Lightline
     Plug 'itchyny/lightline.vim'
+
+    " Vim CPP
+    Plug 'bfrg/vim-cpp-modern'
 call plug#end()
 
 " Filetype
@@ -69,7 +72,7 @@ set wildmode=full
 " Async autocomplete settings
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <cr> pumvisible() ? asyncomplete#close_popup() . "\<cr>" : "\<cr>"
+inoremap <expr> <cr> pumvisible() ? asyncomplete#close_popup() : "\<cr>"
 
 " Normal mode remaps
 nnoremap <Leader>f :Ex<CR>

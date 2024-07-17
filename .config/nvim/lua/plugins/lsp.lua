@@ -52,6 +52,7 @@ return {
             })
 
             lsp.hls.setup({ capabilities = cmp_capabilities })
+            lsp.glsl_analyzer.setup({ capabilities = cmp_capabilities })
         end
     }
 }

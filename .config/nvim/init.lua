@@ -43,8 +43,16 @@ vim.o.splitbelow = true
 vim.o.splitright = true
 
 -- Highlight trailing whitespace
-vim.cmd "highlight ExtraWhiteSpace ctermbg=red guibg=red"
-vim.cmd "match ExtraWhitespace /\\s\\+$/"
+-- vim.cmd "highlight ExtraWhiteSpace ctermbg=red guibg=red"
+-- vim.cmd "match ExtraWhitespace /\\s\\+$/"
+-- Create an autocommand group
+vim.cmd([[
+augroup HighlightTrailingWhitespace
+  autocmd!
+  autocmd BufWinEnter,BufRead * highlight ExtraWhiteSpace ctermbg=red guibg=red
+  autocmd BufWinEnter,BufRead * match ExtraWhiteSpace /\s\+$/
+augroup END
+]])
 
 -- Program Options
 vim.o.grepprg = "rg --vimgrep"

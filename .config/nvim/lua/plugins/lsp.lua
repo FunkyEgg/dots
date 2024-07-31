@@ -40,19 +40,10 @@ return {
 
             local cmp_capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-            lsp.clangd.setup({
-                capabilities = cmp_capabilities,
-                cmd = {
-                    "clangd",
-                    "--query-driver=/usr/bin/clang++,/usr/bin/**/clang-*,/bin/clang,/bin/clang++,/usr/bin/gcc,/usr/bin/g++",
-                    "--all-scopes-completion",
-                    "--completion-style=detailed",
-                    "--header-insertion=never",
-                }
-            })
-
+            lsp.clangd.setup({ capabilities = cmp_capabilities })
             lsp.hls.setup({ capabilities = cmp_capabilities })
             lsp.glsl_analyzer.setup({ capabilities = cmp_capabilities })
+            -- lsp.pyright.setup({ capabilities = cmp_capabilities })
         end
     }
 }

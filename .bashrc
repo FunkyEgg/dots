@@ -12,4 +12,5 @@ PS2='> '
 
 alias :q='exit'
 
+# Created by `pipx` on 2024-07-19 05:30:22
 export PATH="$PATH:/home/funky/.local/bin"

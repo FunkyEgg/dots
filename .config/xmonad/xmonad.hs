@@ -20,7 +20,7 @@ myStartupHook = do
     spawnOnce "picom &"
     spawnOnce "gentoo-pipewire-launcher &"
     spawnOnce "xset m 0 0 &"
-    spawnOnce "feh --bg-scale $HOME/backgrounds/road-96.png &"
+    spawnOnce "feh --bg-scale $HOME/backgrounds/slimerancher.jpg &"
     spawnOnce "trayer --edge top --align right --width 10 --transparent true --alpha 0 --tint 0x232323 --height 17 &"
 
 myLayoutHook = tiled ||| Full ||| float
